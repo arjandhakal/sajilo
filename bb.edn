@@ -1,0 +1,13 @@
+{:paths ["bb"]
+ :deps {;; for making simple http calls
+        hato/hato {:mvn/version "1.0.0"}
+        ;; for setting up simple http server
+        http-kit/http-kit {:mvn/version "2.8.0"}
+        ;; ring 
+        ring/ring-core {:mvn/version "1.14.2"}
+        }
+ :tasks
+ {list:utils {:doc "Personal util tool, supporting the following"
+              :task (do (println "Currently supporting the following :")
+                        (println "------------------------------------")
+                        (println "GCAL: Google Calendar Utils"))}}}

@@ -6,3 +6,8 @@ Starting a repl
 ```
 bb nrepl-server 1666
 ```
+
+# Opening a Random Article 
+```
+bb article
+```

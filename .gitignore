@@ -10,4 +10,7 @@ node_modules
 out/
 .lsp
 /resources/public/styles.css
+
 rough/
+project-notes
+project-notes/

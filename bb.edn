@@ -1,4 +1,4 @@
-{:paths ["bb"]
+{:paths ["src"]
  :deps {;; for making simple http calls
         hato/hato {:mvn/version "1.0.0"}
         ;; for setting up simple http server
@@ -8,8 +8,7 @@
         ;; Parsing HTML
         org.clj-commons/hickory {:mvn/version "0.7.7"}
         ;; Hiccup Lookup Select
-        no.cjohansen/lookup {:mvn/version "2025.10.1"}
-        }
+        no.cjohansen/lookup {:mvn/version "2025.10.1"}}
  :tasks
  {list:utils {:doc "Personal util tool, supporting the following"
               :task (do (println "Currently supporting the following :")
@@ -18,4 +17,16 @@
                         (println "Bret Victor : Random Ref"))}
   article {:doc "Opens a random article for reading, Currently only from Brets list"
            :task (sajilo.random-articles.bret-victor/open-a-random-article)
-           :requires ([sajilo.random-articles.bret-victor])}}}
+           :requires ([sajilo.random-articles.bret-victor])}
+  csci1970kf:sync {:doc "Syncs readings for CSCI 1970KF"
+                   :task (sajilo.csci1970kf-readings/sync!)
+                   :requires ([sajilo.csci1970kf-readings])}
+  csci1970kf:list {:doc "Lists readings for CSCI 1970KF"
+                   :task (apply sajilo.csci1970kf-readings/list-all *command-line-args*)
+                   :requires ([sajilo.csci1970kf-readings])}
+  csci1970kf:mark {:doc "Marks a reading as read (by ID from list)"
+                   :task (apply sajilo.csci1970kf-readings/mark! *command-line-args*)
+                   :requires ([sajilo.csci1970kf-readings])}
+  csci1970kf:unmark {:doc "Marks a reading as unread (by ID from list)"
+                     :task (apply sajilo.csci1970kf-readings/unmark! *command-line-args*)
+                     :requires ([sajilo.csci1970kf-readings])}}}

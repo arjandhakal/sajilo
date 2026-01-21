@@ -1,5 +1,5 @@
 # Introduction 
-WIP - babaskha script for simple tasks that i can do from terminal 
+Babaskha script for simple tasks that i can do from terminal 
 
 # Dev
 Starting a repl
